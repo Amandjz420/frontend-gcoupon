@@ -1,10 +1,11 @@
 export const getCouponData = (callBack=null, url=null, filter=null) => {
-	let uri = 'http://localhost:8000/api/coupons/coupon/';
+	let uri = 'http://3.6.87.222/api/coupons/coupon/';
 	if(filter){
 		uri += "?filter=" + filter.replace(/ /g, "")
  	}
 	if(url){
-		uri = url
+		let n = url.indexOf("api");
+		uri = "http://3.6.87.222/" + url.slice(n)
 	}
 	fetch(uri , {
 		method: 'GET',

@@ -15,7 +15,6 @@ export default class CouponCard extends Component {
 	}
 	render() {
 		let data = this.props.data;
-		console.log(data)
 		return(
 			<div className="coupon-card" onClick={() => this.redirect(this.state.data.link)}>
 				<div className={'coupon'}>

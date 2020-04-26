@@ -40,7 +40,10 @@ class App extends Component {
 
   handleCouponData = ( data ) => {
     if(data.previous){
-      this.setState({results: [...this.state.results, ...data.results]})
+      this.setState({
+        ...data,
+        results: [...this.state.results, ...data.results]
+      })
     } else {
       this.setState({...data})
     }
@@ -59,7 +62,6 @@ class App extends Component {
     window.removeEventListener("scroll", this.handleScroll);
   }
   render() {
-    console.log(this.state)
     return (
       <div className="App">
         <header className="App-header">
